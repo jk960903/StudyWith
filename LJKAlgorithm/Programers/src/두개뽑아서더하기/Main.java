@@ -2,6 +2,7 @@ package 두개뽑아서더하기;
 import java.util.Arrays;
 import java.util.HashSet;
 ///프로그래머스 파일은 메인은 아무 결과가 없습니다. 
+///sdfsdfsdf
 //numbers에 서로 다른 인덱스 2개를 뽑아 더한 값 을 오른차순 배열로 정렬
 public class Main {
 	public static void main(String[] args) {
