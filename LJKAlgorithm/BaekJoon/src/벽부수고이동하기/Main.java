@@ -2,6 +2,7 @@ package 벽부수고이동하기;
 import java.util.Scanner;
 import java.util.Queue;
 import java.util.LinkedList;
+import java.util.HashMap;
 public class Main {
 	private static int[][] dir= {{1,0},{0,1},{-1,0},{0,-1}};
 	private static int realanswer=0;
