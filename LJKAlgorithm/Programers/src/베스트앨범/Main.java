@@ -10,6 +10,7 @@ public class Main {
 	public static void main(String[] args) {
 		String[] genres= {"classic", "pop", "classic", "classic", "classic","dance"	};
 		int[] plays= {300, 600, 150, 300, 300,2000};
+		String temp="1234";
 		//String[] genres= {"classic"};
 		//int[] plays= {100};
 		Solution solution=new Solution();
