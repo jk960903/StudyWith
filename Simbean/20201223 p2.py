@@ -14,11 +14,12 @@ def sol(N, Mlist):
         else:
             flag = 0
         try:
-            if flag == 0:
+            #index 수정하고 if 문 이렇게 바꿔두면 try catch 문 안써도 됨
+            if prev in have:
                 have[prev] += 1
                 have[index] += 1 #증가문
             else:
-                have[index] += 1 #증가문
+                have[index]=1
         except KeyError:
             have[index] = 1 #초기화문 처음 친구와 그다음 친구
         prev = index
