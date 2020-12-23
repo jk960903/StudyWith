@@ -107,6 +107,7 @@ public class Sort implements SortMethod{
 	}
 	//Map과 Set을 사용하여 공간복잡도의 낭비를 줄이고(수들의 간격이 매우 클경우) 정렬함
 	//총 BigO는 최악의 경우 n^2이지만 평균 BigO는 n이 나옴
+	
 	@Override
 	public int[] CounterSortMap(int[] array) {
 		HashMap<Integer,Integer> map=new HashMap<>();
@@ -130,16 +131,17 @@ public class Sort implements SortMethod{
 		}
 		return sortedArray;
 	}
+	
 	@Override
 	public int[] HeapSort(int[] array) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 	
-	@Override
 	public void printSortedArray(int[] array) {
 		for(int i=0; i<array.length; i++) {
 			System.out.print(array[i]+" ");
 		}
+		return;
 	}
 }

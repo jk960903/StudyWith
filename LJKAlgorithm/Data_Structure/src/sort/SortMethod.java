@@ -11,7 +11,9 @@ public interface SortMethod {
 	
 	int[] RadixSort(int[] array);
 	int[] CounterSort(int[] array);
+	int[] CounterSortMap(int[] array);
 	int[] HeapSort(int[] array);
 	
+	void printSortedArray(int[] array);
 	
 }
