@@ -6,8 +6,8 @@ import java.util.ArrayList;
 public class Main {
 	public static void main(String[] args) {
 		Scanner scan=new Scanner(System.in);
-		int v=scan.nextInt();
-		int e=scan.nextInt();
+		int v=scan.nextInt();//정점
+		int e=scan.nextInt();//간선
 		ArrayList<ArrayList<node>> graph=new ArrayList<>();
 		PriorityQueue<node> queue=new PriorityQueue<>();
 		for(int i=0; i<v; i++) {
