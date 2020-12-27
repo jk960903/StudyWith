@@ -11,7 +11,7 @@ public class Main {
 		ArrayList<ArrayList<node>> graph=new ArrayList<>();
 		PriorityQueue<node> queue=new PriorityQueue<>();
 		for(int i=0; i<v; i++) {
-			graph.add(new ArrayList<>());
+			graph.add(new ArrayList<>()); 
 		}
 		for(int i=0; i<e; i++) {
 			
