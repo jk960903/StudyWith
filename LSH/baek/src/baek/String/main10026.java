@@ -18,7 +18,7 @@ class Point{
 
 
 public class main10026 {
-	static int[] dx= {0,0,-1,1};	//»óÇÏÁÂ¿ì
+	static int[] dx= {0,0,-1,1};	//ìƒí•˜ì¢Œìš°
 	static int[] dy= {1,-1,0,0};
 	static int N;
 	static char[][] img;
@@ -49,24 +49,24 @@ public class main10026 {
 	}
 	
 	public static int bfs() {
-		//System.out.println("ÇÔ¼öÁøÀÔ");
+		//System.out.println("í•¨ìˆ˜ì§„ì…");
 		int count=0;
 		for(int i=0;i<N;i++) {
 			for(int j=0;j<N;j++) {
 				if(visited[i][j]) {
-					continue;	//¹æ¹®ÇÑ °÷ÀÌ¸é ±× ºÎºĞÀº °Ç³Ê¶Ù±â
+					continue;	//ë°©ë¬¸í•œ ê³³ì´ë©´ ê·¸ ë¶€ë¶„ì€ ê±´ë„ˆë›°ê¸°
 				}
-				visited[i][j]=true;		//±×°Ô ¾Æ´Ï¶ó¸é ¹æ¹®À¸·Î ¹Ù²Ù±â
+				visited[i][j]=true;		//ê·¸ê²Œ ì•„ë‹ˆë¼ë©´ ë°©ë¬¸ìœ¼ë¡œ ë°”ê¾¸ê¸°
 				q.add(new Point(i,j));
 				
-				while(q.isEmpty()==false) {	//Å¥¿¡ ¹¹°¡ ÀÖ´Âµ¿¾È
-					Point temp = q.poll(); 		//Å¥ Á¦ÀÏ ¾Õ¿¡²¨¸¦ ÀÓ½Ã Æ÷ÀÎÆ®º¯¼ö¿¡ ¹Ş¾ÆÁÜ
+				while(q.isEmpty()==false) {	//íì— ë­ê°€ ìˆëŠ”ë™ì•ˆ
+					Point temp = q.poll(); 		//í ì œì¼ ì•ì—êº¼ë¥¼ ì„ì‹œ í¬ì¸íŠ¸ë³€ìˆ˜ì— ë°›ì•„ì¤Œ
 					
 					for(int k=0;k<4;k++) {
 						int temp_x=temp.x+dx[k];
 						int temp_y=temp.y+dy[k];
 						
-						if(!isRange(temp_x,temp_y) || visited[temp_x][temp_y] || img[i][j]!=img[temp_x][temp_y]) {	//¹üÀ§¿¡ ÀÖ°í ¹æ¹®¾ÈÇß°í ÀÌÀü°ª°ú °°´Ù¸é
+						if(!isRange(temp_x,temp_y) || visited[temp_x][temp_y] || img[i][j]!=img[temp_x][temp_y]) {	//ë²”ìœ„ì— ìˆê³  ë°©ë¬¸ì•ˆí–ˆê³  ì´ì „ê°’ê³¼ ê°™ë‹¤ë©´
 							continue;
 						}
 						visited[temp_x][temp_y]=true;
