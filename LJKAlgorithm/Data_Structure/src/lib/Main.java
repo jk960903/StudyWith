@@ -21,9 +21,12 @@ public class Main {
 		System.out.println(temp);*/
 		Sort sort=new Sort();
 		int[] array= {5,3,2,6,9,12,15,13,1,8,14};
-		int[] sortedArray=sort.BubbleSort(array);
+		//int[] sortedArray=sort.BubbleSort(array);
+		int[] temp=new int[array.length];
+		int[] sortedArray=sort.mergeSort(array, 0,array.length-1, temp);
 		for(int i=0; i<sortedArray.length; i++) {
 			System.out.println(sortedArray[i]);
 		}
+		
 	}
 }

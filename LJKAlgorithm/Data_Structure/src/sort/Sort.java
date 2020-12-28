@@ -58,9 +58,27 @@ public class Sort implements SortMethod{
 	}
 
 	@Override
-	public int[] mergeSort(int[] array) {
-		// TODO Auto-generated method stub
-		return null;
+	public int[] mergeSort(int[] array,int start, int end, int[] temp) {
+		if(start<end) {
+			int mid=(start+end)/2;
+			mergeSort(array,start,mid,temp);
+			mergeSort(array,mid+1,end,temp);
+			
+			int p=start;
+			int q=mid+1;
+			int index=p;
+			while(p<=mid||q<=end) {
+				if(q>end || (p<=mid && array[p]<array[q])) {
+					temp[index++]=array[p++];
+				}else {
+					temp[index++]=array[q++];
+				}
+			}
+			for(int i=start; i<=end; i++) {
+				array[i]=temp[i];
+			}
+		}
+		return array;
 	}
 
 	@Override

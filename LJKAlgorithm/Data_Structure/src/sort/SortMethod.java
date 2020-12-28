@@ -5,7 +5,7 @@ public interface SortMethod {
 	int[] SelectionSort(int[] array);
 	int[] InsertSort(int[] array);
 	
-	int[] mergeSort(int[] array);
+	int[] mergeSort(int[] array,int start,int end,int[] temp);
 	int[] QuickSort(int[] array);
 	int[] ShellSort(int[] array);
 	
