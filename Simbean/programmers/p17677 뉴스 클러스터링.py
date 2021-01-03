@@ -1,6 +1,6 @@
-#https://programmers.co.kr/learn/courses/30/lessons/17677#
-#https://programmers.co.kr/learn/courses/30/lessons/17677#
-#https://programmers.co.kr/learn/courses/30/lessons/17677#
+#https://programmers.co.kr/learn/courses/30/lessons/17677
+#https://programmers.co.kr/learn/courses/30/lessons/17677
+#https://programmers.co.kr/learn/courses/30/lessons/17677
 def Jacard(L):
     minL = []
     maxL = L[0][:]
