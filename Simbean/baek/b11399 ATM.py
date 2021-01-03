@@ -1,3 +1,6 @@
+#https://www.acmicpc.net/problem/11399
+#https://www.acmicpc.net/problem/11399
+#https://www.acmicpc.net/problem/11399
 def s11399_init():
     global Needs
     People = int(input())
