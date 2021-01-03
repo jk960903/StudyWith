@@ -1,6 +1,7 @@
 #n 배열 arr의 크기
 #1부터 오름차순으로 배열이 있다고 가정할때 스택을 사용하여
 #주어진 arr과 똑같이 만들 수 있는지 true false 반환
+#https://www.acmicpc.net/problem/1874
 def sol(N, Mlist):
     index = 1
     stack = []
