@@ -1,3 +1,4 @@
+#https://www.acmicpc.net/problem/16112
 count = 0
 cnt = 0
 array = {}
