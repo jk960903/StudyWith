@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.PriorityQueue;
 public class Main {
 	public static void main(String[] args) {
-		Scanner scan=new Scanner(System.in);
+		/*Scanner scan=new Scanner(System.in);
 		int n=scan.nextInt();
 		PriorityQueue<Integer> queue=new PriorityQueue<>();
 		for(int i=0; i<n; i++) {
@@ -20,6 +20,11 @@ public class Main {
 			}else {
 				queue.add(temp);
 			}
-		}
+		}*/
+		System.out.println("|\\_/|");
+		System.out.println("|q p|   /}");
+		System.out.println("( 0 )\"\"\"\\");
+		System.out.println("|\"^\"`    |");
+		System.out.println("||_/=\\\\__|");
 	}
 }

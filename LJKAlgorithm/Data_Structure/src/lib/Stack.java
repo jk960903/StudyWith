@@ -26,6 +26,14 @@ public class Stack extends List implements StackMethod{
 		return last;
 		
 	}
+	@Override
+	public boolean isEmpty() {
+		if(this.size==0) {
+			return true;
+		}else {
+			return false;
+		}
+	}
 	
 
 }

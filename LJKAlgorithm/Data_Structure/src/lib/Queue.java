@@ -25,6 +25,7 @@ public class Queue extends List implements QueueMethod{
 	@Override
 	public Queue Dequeue() {
 		Queue temp=this;
+		this.size--;
 		this.next=temp.next;
 		return temp;
 		
@@ -32,5 +33,9 @@ public class Queue extends List implements QueueMethod{
 	@Override
 	public int size() {
 		return this.size();
+	}
+	@Override
+	public Queue Peek() {
+		return this;
 	}
 }
