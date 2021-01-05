@@ -4,6 +4,9 @@ import java.util.Scanner;
 public class Main {
 	public static void main(String[] args){
 		Scanner scan=new Scanner(System.in);
+
+		int n1=100000;
+		boolean[][] check=new boolean[n1][n1];
 		int n=scan.nextInt();
 		int h=scan.nextInt();
 		int[] stone1=new int[n/2];
