@@ -104,8 +104,6 @@ public class Solution {
 		long answer1=onesize*(onesize-1);
 		answer1/=2;
 		answer=answer+answer1;
-		System.out.println(answer1);
-		//499949998
 		return answer;
 		
 	}
