@@ -5,6 +5,7 @@ public class HandmadeStack extends SinglyLinkedList {
 	private int size=0;
 	
 	public void push(int data) {
+		//super() 메소드 사용
 		st.add(data);
 		size++;
 	}

@@ -6,6 +6,7 @@ public class HandmadeQueue extends SinglyLinkedList {
 	private int size=0;
 	
 	public void insert(int data) {
+		//super()¸Þ¼Òµå
 		q.add(data);
 		size++;
 	}

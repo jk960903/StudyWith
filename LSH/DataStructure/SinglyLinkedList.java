@@ -6,8 +6,8 @@ public class SinglyLinkedList {
 	private Node tail;
 	private int size=0;
 	
-	public class Node{	//inner class		이거 public로 해도 되나? HandmadeStack에서 peek,pop함수의 반환형을 위함
-		protected Object data;				//이거 protected로 해도 되나? HandmadeStack에서 peek,pop함수의 반환형을 위함
+	public class Node{	//inner class		이거 public로 해도 되나? HandmadeStack에서 peek,pop함수의 반환형을 위함 -> 생성자는 public으로 해주는게 좋음
+		protected Object data;				//이거 protected로 해도 되나? HandmadeStack에서 peek,pop함수의 반환형을 위함 //protected는 package 다를경우 사용할수 없으므로 public으로 해주는게 좋음
 		private Node next;	//다음노드
 		public Node(Object data) {
 			this.data = data;
@@ -68,13 +68,13 @@ public class SinglyLinkedList {
 	//헤드(첫번쨰)노드부터 뒤로 탐색
 	public Node getNode(int index) {
 		Node node = head;	//임의의 헤드노드 생성후
-		for(int i=0;i<index;i++) {
+		for(int i=0;i<index;i++) { //포문탐색보다는 while(다음노드 !=null)일 경우가 더 좋음 for문으로 하면서 추후에 삽입 삭제 같이이루어질경우 list 삭제 증가가 이루어져서 어긋날 수있음 주의
 			node = node.next;	//그 노드가 가리키는 노드로 재설정, 그걸 해당 인덱스만큼 반복
 		}	
 		return node;
 	}
 
-	
+	//remove는 void 로 하거나 class 반환 Node 혹은 list자체
 	//맨 앞 삭제
 	public Object removeFirst() {
 		Node temp = head;
@@ -85,7 +85,7 @@ public class SinglyLinkedList {
 		return returndata;
 	}
 	//맨 뒤에 삭제
-	public Object remove() {
+	public Object remove() { 
 		Node tailfront = getNode(size-2);	//tail노드 한칸 앞에 노드
 		Object returndata = tail.data;
 		tail = null;				//원래 tail을 삭제
@@ -105,7 +105,7 @@ public class SinglyLinkedList {
 			tail = targetfront;
 		}
 		targetfront.next =targetfront.next.next;	//앞에 노드가 지울노드의 뒤에 노드를 가리키게 설정
-		target = null;
+		target = null;  //null 시켜준건 좋았는데 link도 null로 해주는게 좋음
 		size--;
 		return returndata;
 	}
