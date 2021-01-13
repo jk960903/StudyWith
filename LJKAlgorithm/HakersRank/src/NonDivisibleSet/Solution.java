@@ -1,6 +1,7 @@
 package NonDivisibleSet;
 
 public class Solution {
+	//set에서 2개를 뽑았을때 그 합이 k로 나누어 지지 않는 부분 set
 	public static void main(String[] args) {
 		String temp="278 576 496 727 410 124 338 149 209 702 282 718 771 575 436";
 		String[] temp1=temp.split(" ");
