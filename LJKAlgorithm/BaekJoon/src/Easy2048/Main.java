@@ -40,6 +40,7 @@ public class Main {
 	private static void Solution(int[][] map,ArrayList<Integer> list) {
 		for(int i=0; i<5; i++) {
 			int type=list.get(i);
+			LinkedList<Integer> a=new LinkedList<>();
 			if(type==0) {
 				//À§
 				Queue<Integer> queue=new LinkedList<>();
