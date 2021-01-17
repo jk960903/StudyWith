@@ -43,7 +43,6 @@ class Solution {
             for(int i=0; i<array.length; i++){
             	temp[i]=array[i];
             }
-            System.out.println();
             list.add(temp);
             return;
         }
