@@ -19,6 +19,7 @@ public class Main {
 			}
 		}
 		int answer=BFS(map);
+		LinkedList<Integer> list=new LinkedList<>();
 		System.out.println(answer);
 		
 	}

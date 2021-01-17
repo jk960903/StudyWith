@@ -29,6 +29,7 @@ public class Main {
 		}
 		while(!stack.isEmpty()) sb.append(stack.pop());
 		System.out.println(sb);
+	
 		
 	}
 	public static int rank(char c) {

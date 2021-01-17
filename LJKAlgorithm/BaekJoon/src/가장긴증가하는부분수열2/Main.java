@@ -11,6 +11,9 @@ public class Main {
 		StringTokenizer st=new StringTokenizer(br.readLine()," ");
 		int[] array=new int[a];
 		ArrayList<Integer> list=new ArrayList<>();
+		ArrayList<int[]> list1=new ArrayList<>();
+		list1.add(array);
+		StringBuilder sb=new StringBuilder();
 		list.add(0);
 		for(int i=0; i<a; i++) {
 			array[i]=Integer.parseInt(st.nextToken());

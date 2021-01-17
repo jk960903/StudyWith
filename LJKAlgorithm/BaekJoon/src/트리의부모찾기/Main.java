@@ -9,6 +9,7 @@ import java.util.Queue;
 public class Main {
 	public static void main(String[] args)throws IOException{
 		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		int c=' ';
 		int n=Integer.parseInt(br.readLine());
 		ArrayList<ArrayList<Integer>> list=new ArrayList<>();
 		list.add(new ArrayList<>());
@@ -24,6 +25,8 @@ public class Main {
 			list.get(b).add(a);
 		}
 		bfs(1,list,parents,n);
+		String temp="s";
+		int index=temp.charAt(0);
 		
 	}
 	private static void bfs(int start,ArrayList<ArrayList<Integer>> list,int[] parents,int n) {
