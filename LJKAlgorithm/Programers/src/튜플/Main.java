@@ -20,9 +20,6 @@ class Solution {
         String[] element=s.split("}");
         for(int i=0; i<element.length; i++){
             element[i]=element[i].replace("{","");
-            if(element[i].indexOf(",")==0){
-                element[i]=element[i].substring(1);
-            }
             String[] eachelement=element[i].split(",");
             map.put(eachelement.length,eachelement);
             if(eachelement.length>max){

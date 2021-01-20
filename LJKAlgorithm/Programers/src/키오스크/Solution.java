@@ -1,10 +1,12 @@
 package 키오스크;
 import java.util.Queue;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.PriorityQueue;
 public class Solution {
 	public static void main(String[] args) {
-		String[] customers= {"10/01 23:20:25 30", "10/01 23:25:50 26", "10/01 23:31:00 05", "10/01 23:33:17 24", "10/01 23:50:25 13", "10/01 23:55:45 20", "10/01 23:59:39 03", "10/02 00:10:00 10"};
+		//String[] customers= {"10/01 23:20:25 30", "10/01 23:25:50 26", "10/01 23:31:00 05", "10/01 23:33:17 24", "10/01 23:50:25 13", "10/01 23:55:45 20", "10/01 23:59:39 03", "10/02 00:10:00 10"};
+		String[] customers= {"01/01 00:00:00 30", "01/01 00:01:00 29", "01/01 00:02:00 28", "01/01 00:03:00 27", "01/01 00:04:00 26", "01/01 00:05:00 25"};
 		int n=3;
 		Queue<customer> queue=new LinkedList<>();
 		for(int i=0; i<customers.length; i++) {
@@ -48,7 +50,7 @@ public class Solution {
 			Kiosk kiosk=priorityQueue.poll();
 			int num=kiosk.num;
 			count[num-1]++;
-			priorityQueue.add(new Kiosk(num,temp.start+(temp.use*60)));
+			priorityQueue.add(new Kiosk(num,kiosk.time+(temp.use*60)));
 		}
 		int max=0;
 		for(int i=0; i<n; i++) {
@@ -74,6 +76,7 @@ class Kiosk implements Comparable<Kiosk>{
 	}
 	@Override
 	public int compareTo(Kiosk o) {
+		if(this.time==o.time) return Integer.compare(this.num, o.num); 
 		return Integer.compare(this.time, o.time);
 	}
 	
