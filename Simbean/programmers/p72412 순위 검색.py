@@ -1,5 +1,37 @@
 #https://programmers.co.kr/learn/courses/30/lessons/72412
 #https://programmers.co.kr/learn/courses/30/lessons/72412
+"""시간초과남
+def solution(info, query):
+    answer = []
+    applicant = {0 : [] ,1: [],2: [],3: [],4: []}
+    dic = {'python' : [] , 'java' : [],'cpp' : [], 'backend': [],'frontend': [], 'junior': [],'senior': [],'chicken': [],'pizza': [], '-': []}
+    for i in info:
+        word = i.split(' ')
+        applicant[0].append(word[0])
+        applicant[1].append(word[1])
+        applicant[2].append(word[2])
+        applicant[3].append(word[3])
+        applicant[4].append(word[4])
+    dic['-'] = range(len(applicant[0]))
+    for i in range(4):
+        for j in range(len(applicant[0])):
+            dic[applicant[i][j]].append(j)
+    for i in query:
+        word = i.split(' ')
+        word = [word[0],word[2],word[4],word[6],word[7]]
+        p = range(len(applicant[0]))
+        for j in range(4):
+            p = set(p).intersection(dic[word[j]])
+        p = list(p)
+        clone = []
+        for j in p:
+            if int(applicant[4][j]) >= int(word[4]):
+                clone.append(j)
+        p = clone[:]
+        answer.append(len(p))
+    return answer
+
+"""
 def solution(info, query):
     answer = []
     applicant = {0: [], 1: [], 2: [], 3: [], 4: []}
