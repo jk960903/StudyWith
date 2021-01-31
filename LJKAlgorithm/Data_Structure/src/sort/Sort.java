@@ -73,7 +73,7 @@ public class Sort implements SortMethod{
 				}else {
 					temp[index++]=array[q++];
 				}
-			}
+			}	
 			for(int i=start; i<=end; i++) {
 				array[i]=temp[i];
 			}

@@ -1,11 +1,16 @@
 package 가장가까운공통조상;
 import java.io.*;
+import java.util.Queue;
 import java.util.StringTokenizer;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.HashMap;
+import java.util.Deque;
 public class Main {
 	public static void main(String[] args) throws IOException{
 		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		Deque<Character> deque=new LinkedList<>();
+		
 		int testcase=Integer.parseInt(br.readLine());
 		for(int i=0; i<testcase; i++) {
 			int n=Integer.parseInt(br.readLine());
