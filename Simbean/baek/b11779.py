@@ -1,3 +1,4 @@
+#https://www.acmicpc.net/problem/11779
 import collections as d
 import sys
 def b11779(n,m,inform,s,e):
