@@ -20,11 +20,7 @@ class Solution {
                 }
             }
         }
-        for(int i=1; i<dp.length; i++){
-            for(int j=1; j<dp[0].length; j++){
-                System.out.println(dp[i][j]);
-            }
-        }
+        
         return dp[m][n];
     }
 }
