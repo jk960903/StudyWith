@@ -1,6 +1,6 @@
-package Programmers;
+package Greedy;
 
-public class ÁÖ½Ä°¡°Ý {
+public class �ֽİ��� {
 
 	public static void main(String[] args) {
 		int[] prices = {1,2,3,2,3};
@@ -18,7 +18,7 @@ public class ÁÖ½Ä°¡°Ý {
             }
             answer[i] = cnt;
             cnt = 0;
-        }  
+        } 
         for(int i=0;i<5;i++) {
         	System.out.println(answer[i]);
         }
