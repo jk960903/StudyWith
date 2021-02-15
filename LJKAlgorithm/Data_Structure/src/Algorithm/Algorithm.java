@@ -15,6 +15,7 @@ public class Algorithm implements AlgorithmMethod{
 		}
 		return left;
 	}
+	
 	@Override
 	public int upperBound(int[] data,int value) {
 		int left=0;

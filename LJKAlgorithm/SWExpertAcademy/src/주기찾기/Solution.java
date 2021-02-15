@@ -11,6 +11,7 @@ public class Solution {
 		int cal;
 		boolean[] visit;
 		int[] indexarray;
+		LinkedList<Integer> list=new LinkedList<>();
 		for(int testcase=1; testcase<=tc; testcase++) {
 			StringTokenizer st=new StringTokenizer(br.readLine()," ");
 			s=Integer.parseInt(st.nextToken());
