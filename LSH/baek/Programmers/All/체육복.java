@@ -15,16 +15,13 @@ class S {
         }
         for(int i=0;i<entire.length;i++) {
         	try {
-	        	if(entire[i] == 0 && entire[i-1] == 2) {
-	        		entire[i-1]--;
-	        		entire[i]++;
-	        	}
-	        	else if(entire[i] == 0 && entire[i+1] == 2) {
+        		if(entire[i] == 0 && entire[i+1] == 2) {
 	        		entire[i+1]--;
 	        		entire[i]++;
 	        	}
-	        	else {
-	        		continue;
+	        	else if(entire[i] == 0 && entire[i-1] == 2) {
+	        		entire[i-1]--;
+	        		entire[i]++;
 	        	}
         	}catch(Exception e) {
         		continue;
