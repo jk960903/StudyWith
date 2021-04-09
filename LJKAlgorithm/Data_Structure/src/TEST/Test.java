@@ -38,8 +38,10 @@ class Solution {
     static boolean[] visit;
     public int solution(String numbers) {
         int answer = 0;
-        ArrayList<Integer> list=new ArrayList<>();
-        
+        ArrayList<String> list=new ArrayList<>();
+        list.add("1");
+        list.add("@");
+        list.add("3");
         int[] num=new int[10];
         int size=1;
         for(int i=0; i<numbers.length(); i++){
@@ -57,11 +59,12 @@ class Solution {
         String num1="";
         num1=num1+numbers.charAt(0);
         StringBuilder sb=new StringBuilder();
-        sb.le
-        
-        
-        
-        
+        System.out.println(list.size());
+        list.remove("1");
+        answer=list.size();
+        for(int i=0; i<list.size(); i++) {
+        	System.out.println(list.get(i));
+        }
         return answer;
     }
     public void dfs(int length,int depth,String num){

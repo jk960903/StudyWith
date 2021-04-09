@@ -68,7 +68,7 @@ class Solution{
 			int mindis=Integer.MAX_VALUE;
 			int minx=array[0].length;
 			int miny=array.length;
-			for(int j=array.length-1;  j>=array.length-distance; j--) {
+			for(int j=array.length-1;  j>=0; j--) {
 				for(int k=0; k<array[0].length; k++) {
 					if(array[j][k]==1 && distance >= Math.abs(archery-j) + Math.abs(archerx-k)) {
 						if( Math.abs(archery-j) + Math.abs(archerx-k) <= mindis) {
@@ -87,9 +87,9 @@ class Solution{
 					}
 				}
 			}
-			if(minx != array[0].length && miny != array.length) {
-				boolean check=false;
-				for(int j=0; j<shoot.size(); j++) {
+			if(minx != array[0].length && miny != array.length) { // 쏠수 있을경우
+				boolean check=false; // 중복된 값이 있는지 판별
+				for(int j=0; j<shoot.size(); j++) { // 탐색
 					archer temp=shoot.get(j);
 					if(minx==temp.x && miny==temp.y) {
 						check=true;

@@ -2,11 +2,74 @@ package TESTCODE;
 import java.util.*;
 import java.io.*;
 public class TEST {
-	public static void main(String[] args) {
-		PriorityQueue<Integer> queue=new PriorityQueue<>();
-		queue.add(1);
-		queue.add(1);
-		queue.add(1);
-		int a=0;
-	}
+		static Vector<Integer> allPrimes=new Vector<Integer>();
+	    // Fills above vector allPrimes[] for a given n
+	    static void sieve(int n){
+	        // Create a boolean array "prime[0..n]" and
+	       // initialize all entries it as true. A value
+	        // in prime[i] will finally be false if i is
+	        // not a prime, else true.
+	        boolean []prime=new boolean[n+1];
+	         
+	        for(int i=0;i<=n;i++)
+	        prime[i]=true;
+	         
+	        // Loop to update prime[]
+	        for (int p=2; p*p<=n; p++)
+	        {
+	        // If prime[p] is not changed, then it
+	        // is a prime
+	        if (prime[p] == true)
+	        {
+	        // Update all multiples of p
+	            for (int i=p*2; i<=n; i += p)
+	                prime[i] = false;
+	        }
+	        }
+	        // Store primes in the vector allPrimes
+	            for (int p=2; p <= n; p++)
+	                if (prime[p])
+	                    allPrimes.add(p);
+	        }
+	         
+	        // Function to find all result of factorial number
+	        static long factorialDivisors(int n)
+	        {
+	            sieve(n); // create sieve
+	         
+	            // Initialize result
+	            long result = 1;
+	         
+	            // find exponents of all primes which divides n
+	            // and less than n
+	            for (int i=0; i < allPrimes.size(); i++)
+	            {
+	                // Current divisor
+	                long p = allPrimes.get(i);
+	         
+	                // Find the highest power (stored in exp)'
+	                // of allPrimes[i] that divides n using
+	                // Legendre's formula.
+	                long exp = 0;
+	                while (p <= n)
+	                {
+	                    exp = exp + (n/p);
+	                    p = p*allPrimes.get(i);
+	                }
+	         
+	                // Multiply exponents of all primes less
+	                // than n
+	                result = (result*(2*exp+1))%1000007;
+	            }
+	         
+	            // return total divisors
+	            return result;
+	        }
+	         
+	        // Driver code
+	        public static void main(String []args)
+	        {
+	            System.out.println(factorialDivisors(10000));
+	             
+	        }
 }
