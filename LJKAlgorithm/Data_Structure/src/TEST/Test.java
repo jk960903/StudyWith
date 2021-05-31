@@ -1,37 +1,15 @@
 package TEST;
 import java.util.*;
+import sort.Sort ;
 public class Test {
 	public static void main(String[] args) {
-		PriorityQueue<Integer> queue=new PriorityQueue<>();
-		/*queue.add(5);
-		queue.add(3);
-		queue.add(2);
-		queue.add(1);
-		queue.add(8);
-		queue.add(4);
-		queue.remove(3);
-		while(!queue.isEmpty()) {
-			System.out.println(queue.poll());
-		}*/
-		/*ArrayList<Integer> list=new ArrayList<>();
-        boolean[] prime=new boolean[10000001];
-        prime[0]=true;
-        prime[1]=true;
-        int count=0;
-        for(int i=2; i*i<10000000; i++){
-            for(int j=i*i; j<10000000; j+=i){
-            	if(!prime[j]) {
-            		count++;
-            		prime[j]=true;
-            	}
-            	
-            }
-        }
-        System.out.println(count);*/
-		Solution s=new Solution();
-		String numbers="17";
-		System.out.println(s.solution(numbers));
-        
+		int[] array = {1,4,2,6,5,3,9,7,8,10};
+		Sort sort = new Sort() ;
+		int[] temp = new int[array.length];
+		int[] result = sort.mergeSort(array, 0, array.length-1, temp);
+		for(int i = 0 ; i < temp.length; i++) {
+			System.out.println(result[i]);
+		}
 	}
 }
 class Solution {
@@ -75,5 +53,26 @@ class Solution {
                 
             }
         }
+    }
+    public int solution1(String s) {
+    	int answer=0;
+    	for(int i=0; i<s.length(); i++) {
+    		answer+=Find(s,i,i+1);
+    		answer+=Find(s,i,i);
+    	}
+    	return answer;
+    }
+    public int Find(String s,int i,int j) {
+    	int answer=0;
+    	while(i>=0 && j<s.length() && i<=j) {
+    		if(s.charAt(i) == s.charAt(j)) {
+    			answer++;
+    			i--;
+    			j++;
+    		}else {
+    			break;
+    		}
+    	}
+    	return answer;
     }
 }
