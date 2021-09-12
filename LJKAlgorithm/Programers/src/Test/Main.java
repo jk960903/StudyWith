@@ -6,12 +6,18 @@ public class Main {
 		//String[][] places ={{"POPOP", "OXXOX", "OPXPX", "OOXOX", "POXXP"}, {"POOPX", "OXPXP", "PXXXO", "OXXXO", "OOOPP"}, {"PXOPX", "OXOXP", "OXPXX", "OXXXP", "POOXX"}, {"OOOXX", "XOOOX", "OOOXX", "OXOOX", "OOOOO"}, {"PXPXP", "XPXPX", "PXPXP", "XPXPX", "PXPXP"}};
 		//int[] answer = solution.solution(places);
 		//boolean[] temp = new boolean[100];
-		String[] s = {"D 2","C","U 3","C","D 4","C","U 2","Z","Z"};
+		//String[] s = {"D 2","C","U 3","C","D 4","C","U 2","Z","Z"};
+		//String s = "aaaa" - "bbbb";
 		//for(int i = 0; i< answer.length; i++) {
 		//	System.out.println(answer[i]);
 		//}
-		String temp =solution.solution(8, 2, s);
-		System.out.println(temp);
+		//String temp =solution.solution(8, 2, s);
+		//System.out.println(temp);
+		ArrayList<Integer> list = new ArrayList<>();
+		Long one =Long.valueOf(1);
+		Long two=Long.valueOf(1);
+		if(one==two) System.out.println("clear");
+		int num=list.get(0);
 	}
 }
 
