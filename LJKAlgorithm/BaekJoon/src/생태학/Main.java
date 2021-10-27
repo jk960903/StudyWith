@@ -10,6 +10,7 @@ public class Main {
 		try {
 			String input = br.readLine();
 			while(true) {
+				
 				if(map.containsKey(input)) {
 					map.put(input,map.get(input)+1);
 				}else {

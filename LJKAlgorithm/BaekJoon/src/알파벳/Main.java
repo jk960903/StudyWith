@@ -1,9 +1,10 @@
 package ¾ËÆÄºª;
 import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.StringTokenizer;
-import java.util.HashSet;
 public class Main {
 	public static int[][] dir= {{1,0},{0,1},{-1,0},{0,-1}};
 	public static int max=0;
@@ -17,43 +18,55 @@ public class Main {
 			String temp=br.readLine();
 			map[i]=temp.toCharArray();
 		}
-		HashSet<Character> set=new HashSet<>();
-		DFS(map,set,map[0][0],0,0);
+		BFS(map);
 		System.out.println(max);
 		
 	}
-	public static void DFS(char[][] map,HashSet<Character> set,char now,int startx,int starty) {
-		StringBuilder sb=new StringBuilder();
-		for(Character temp: set) {
-			if(now==temp) {
-				sb.append(now);
-				if(max<sb.length()) {
-					max=sb.length();
+	
+	private static int BFS(char[][] map) {
+		Queue<Build> queue = new LinkedList<>();
+		StringBuilder sb = new StringBuilder();
+		sb.append(map[0][0]);
+		queue.add(new Build(sb.toString(),1,0,0));
+		
+		while(!queue.isEmpty()) {
+			Build b = queue.poll();
+			
+			for(int i = 0; i<dir.length; i++) {
+				int tempx = b.x + dir[i][0];
+				int tempy= b.y + dir[i][1];
+				
+				if(inbound(tempx,tempy,map)){
+					StringBuilder temps = new StringBuilder();
+					temps.append(map[tempx][tempy]);
+					if(!b.s.contains(temps)) {
+						queue.add(new Build(b.s+temps.toString(),b.day+1,tempx,tempy));
+						max=Math.max(max, b.day+1);
+					}
+					
 				}
-				return;
-			}else {
-				sb.append(temp);
+					
 			}
 		}
-		sb.append(now);
-		if(max<sb.length()) {
-			max=sb.length();
-		}
-		for(int i=0; i<dir.length; i++)
-		{
-			int tempx=startx+dir[i][0];
-			int tempy=starty+dir[i][1];
-			if(inbound(tempx,tempy,map)) {
-				set.add(now);
-				DFS(map,set,map[tempx][tempy],tempx,tempy);
-				set.remove(now);
-			}
-		}
+		return max;
 	}
-	public static boolean inbound(int x, int y,char[][] map) {
-		if(x<0||y<0||x>=map.length||y>=map[0].length) {
-			return false;
-		}
-		return true;
+	
+	private static boolean inbound(int tempx, int tempy, char[][] map) {
+		if(tempx>=0 && tempx<map.length && tempy>=0 && tempy < map[0].length) return true;
+		return false;
+	}
+	
+}
+class Build{
+	String s;
+	int day;
+	int x;
+	int y;
+	
+	public Build(String s, int day,int x, int y) {
+		this.s=s;
+		this.day=day;
+		this.x=x;
+		this.y=y;
 	}
 }
