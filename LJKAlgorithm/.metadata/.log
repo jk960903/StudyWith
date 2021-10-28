@@ -5870,3 +5870,6 @@ org.apache.http.NoHttpResponseException: download.eclipse.org:443 failed to resp
 
 !ENTRY org.eclipse.jdt.debug 2 0 2021-10-27 23:35:46.595
 !MESSAGE Unable to find location of java.lang.Thread.setName() in debuggee JVM, for type java.lang.Thread
+
+!ENTRY org.eclipse.jdt.debug 2 0 2021-10-28 23:31:14.560
+!MESSAGE Unable to find location of java.lang.Thread.setName() in debuggee JVM, for type java.lang.Thread
