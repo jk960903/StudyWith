@@ -1,0 +1,29 @@
+Back End 분야를 희망합니다. 
+
+관심있는 기술분야는 핀테크와 온라인 결제 서비스 등에 관심이 많습니다. 
+
+
+2020.03 ~ 2020 .10
+치매환자 실종방지를 위한 위치추적과 건강상태 체크를 위한 어플리케이션 개발
+3) 환자용 애플리케이션과 웨어러블 장치 블루투스 연동및 데이터 송수신
+    환자 애플리케이션과 보호자용 애플리케이션의 GPS의 위도 경도 좌표를 통하여 Google Maps API를 통한 GeoCoding 작업 및 지도 표현 기능
+    환자 휴대전화 내의 Gyro 센서를 이용한 환자의 하루 걸음 걸이 측정
+    각 센서 측정 및 송수신 멀티 스레드 구현
+    환자 애플리케이션과 웹 서버 데이터 송수신
+    보호자 애플리케이션과 웹 서버 연동 데이터 수신
+4) JAVA, PHP, MySQL, GoogleMaps API, Android , Thread , 안드로이드 생애주기, Apache Tomcat , BlueTooth , cpp , Aduino , GyroSensor, 
+5) 
+
+
+
+JAVA : 3
+SpringBoot - 2
+Python - 2
+C# - 3
+.Net - 2
+Android - 2
+JavaScript - 2
+MySQL - 2
+MsSQL - 2
+Android  - 2
+
