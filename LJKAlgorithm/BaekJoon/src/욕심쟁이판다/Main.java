@@ -33,6 +33,7 @@ public class Main {
 	private static int dfs(int x , int y) {
 		int[][] dir = {{1,0},{0,1},{-1,0},{0,-1}};
 		if(dp[x][y]!=0) return dp[x][y];
+		dp[x][y] = 1;
 		for(int i = 0 ; i<4; i++) {
 			int tempx = x+ dir[i][0];
 			int tempy = y + dir[i][1];
