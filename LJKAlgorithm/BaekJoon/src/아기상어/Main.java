@@ -43,7 +43,7 @@ public class Main {
 					}else if(inbound(tempx,tempy,map) && !visit[tempx][tempy] && map[tempx][tempy] != 0 && map[tempx][tempy] < f.level){
 						queue.add(new fish(tempx,tempy,f.level,f.time+1));
 						visit[tempx][tempy]=true;
-						pq.add
+						
 					}
 				}
 			}
