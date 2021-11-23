@@ -22,7 +22,7 @@ public class Main {
 			while(tempe != e || temps != s || tempm != m) {
 				tempe++;
 				temps++;
-				tempm++;
+				tempm++; 	
 				if(tempe == 16) {
 					tempe = 1;
 
