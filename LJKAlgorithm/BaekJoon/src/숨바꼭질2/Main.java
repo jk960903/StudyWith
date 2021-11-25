@@ -22,36 +22,30 @@ public class Main {
 		}
 		Queue<man> queue=new LinkedList<>();
 		queue.add(new man(n,0));
-		boolean[] visit=new boolean[k+1];
+		boolean[] visit=new boolean[100001];
 		visit[n]=true;
 		while(!queue.isEmpty()) {
 			man man=queue.poll();
+			visit[man.x] = true;
 			int x=man.x;
 			int time=man.time;
 			if(man.x==k) {
-				count++;
-				min=man.time;
-				break;
+				min=Math.min(min, man.time);
+				if(min == man.time) {
+					count++;
+				}
 			}
-			if(man.x+1<=k&&!visit[man.x+1]) {
-				visit[man.x+1]=true;
+			if(man.x+1<=100000&&!visit[man.x+1]) {
 				queue.add(new man(man.x+1,man.time+1));
 			}
 			if(man.x-1>=0&&!visit[man.x-1]) {
-				visit[man.x-1]=true;
 				queue.add(new man(man.x-1,man.time+1));
 			}
-			if(man.x*2<=k&&!visit[man.x*2]) {
-				visit[man.x*2]=true;
+			if(man.x*2<=100000&&!visit[man.x*2]) {
 				queue.add(new man(man.x*2,man.time+1));
 			}
 		}
-		while(!queue.isEmpty()) {
-			man man=queue.poll();
-			if(man.x==k) {
-				count++;
-			}
-		}
+		
 		result[0]=min;
 		result[1]=count;
 		return result;
