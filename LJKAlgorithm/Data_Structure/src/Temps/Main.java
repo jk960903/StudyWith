@@ -1,6 +1,46 @@
 package Temps;
 import java.util.*;
 class Solution {
+    public int solution(int[] arr) {
+        int answer = 0;
+        int indexi = 0;
+        int indexj = 1;
+        int indexk = 0;
+        boolean check = true;
+        while(true){
+            while(indexi != arr.length && indexj != arr.length){
+                if(!check){
+                    break;
+                }
+                check = false;
+                if(indexj < arr.length && arr[indexj] > arr[indexj-1]){
+                    check = true;
+                    indexj++;
+                }else{
+                    if(indexk == 0){
+                        check = true;
+                        indexk = indexj;
+                    }
+                    if(indexk+1 < arr.length && arr[indexk] > arr[indexk+1]){
+                        check = true;
+                        indexk++;
+                    }
+                }
+            }
+            int increase = indexj - indexi;
+            int decrease = indexk - indexj;
+            answer += ((increase -1) * (decrease+1))% 100000007;
+            indexi = indexk;
+            indexj = indexi+1;
+            indexk = indexj;
+            check = true;
+            if(indexi >= arr.length || indexk >= arr.length) {break;}
+        }
+        
+        return answer;
+    }
+}
+/*class Solution {
     public int[] solution(String s) {
         int[] answer = {};
         boolean[] visit = new boolean[s.length()];
@@ -107,13 +147,17 @@ class dot{
         this.index = index;
         this.now = now;
     }
-}
+}*/
 public class Main {
 	public static void main(String[] args) {
 		Solution solution = new Solution();
+		int[][] map = new int[1000000][1000000];
 		//String s = "aaabbaaa";
 		//int[] answer = solution.solution(s);
-		String[][] plans = 	{ {"È«Äá", "12PM", "9AM"}, {"¿¤¿¡ÀÌ", "8PM", "12PM"}};
-		System.out.println(solution.solution(3.5, plans));
+		//String[][] plans = 	{ {"È«Äá", "12PM", "9AM"}, {"¿¤¿¡ÀÌ", "8PM", "12PM"}};
+		//System.out.println(solution.solution(3.5, plans));
+		//int[] arr = {1,2,1,2,1};
+		//int answer = solution.solution(arr);
+		//System.out.println(answer);
 	}
 }

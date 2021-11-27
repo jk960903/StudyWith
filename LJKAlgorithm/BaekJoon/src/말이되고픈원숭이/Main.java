@@ -2,6 +2,8 @@ package ¸»ÀÌµÇ°íÇÂ¿ø¼þÀÌ;
 import java.util.*;
 import java.io.*;
 public class Main {
+	static boolean[][][] visit;
+	static int[][] map;
 	public static void main(String[] args) {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		try {
@@ -11,23 +13,23 @@ public class Main {
 			int w = Integer.parseInt(st.nextToken());
 			int h = Integer.parseInt(st.nextToken());
 			
-			int[][] map = new int[h][w];
+			map = new int[h][w];
 			for(int i = 0 ; i < h; i++) {
 				st = new StringTokenizer(br.readLine(), " ");
 				for(int j = 0 ; j < w; j++) {
 					map[i][j] = Integer.parseInt(st.nextToken());
 				}
 			}
-			int answer = BFS(map,k);
+			int answer = BFS(k);
 			System.out.println(answer);
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
 	}
 	
-	public static int BFS(int[][] map , int k) {
+	public static int BFS(int k) {
 		Queue<Monkey> queue = new LinkedList<>();
-		boolean[][][] visit = new boolean[k+1][map.length][map[0].length];
+		visit = new boolean[k+1][map.length][map[0].length];
 		int answer = 0;
 		int[][] horseDir = {{-2,1},{1,2},{1,2},{2,1},{2,-1},{1,-2},{-1,-2},{-2,-1}};
 		int[][] dir = {{1,0},{0,1},{-1,0},{0,-1}};
@@ -37,8 +39,7 @@ public class Main {
 			Monkey m = queue.poll();
 			
 			if(m.x == map.length-1 && m.y == map[0].length-1) {
-				answer = m.time;
-				break;
+				return m.time;
 			}
 			if(m.horse < k) {
 				for(int i = 0 ; i < horseDir.length; i++) {
