@@ -1,0 +1,5 @@
+package ªÁ≈¡∞°∞‘;
+
+public class Main {
+
+}
