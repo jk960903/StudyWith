@@ -1,6 +1,5 @@
-package ZeroBase2Weeks;
+
 import java.io.*;
-import java.util.*;
 public class Problem1 {
 	public static void main(String[] args) {
 		for(Object k : System.getProperties().keySet()) {
@@ -9,7 +8,7 @@ public class Problem1 {
 		}
 		try {
 			String path = System.getProperty("user.dir"); // 현재 디렉토리 가져오기
-			File file = new File(path+"\\src\\property.html");
+			File file = new File(path+"\\property.html");
 			BufferedWriter writer = new BufferedWriter(new FileWriter(file));
 			writer.write("<!DOCTYPE html>\n");
 			writer.write("<html charset=\"en\"\n");
