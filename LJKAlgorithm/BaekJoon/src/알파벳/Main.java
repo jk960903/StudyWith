@@ -1,4 +1,4 @@
-package ¾ËÆÄºª;
+package BaekJoon.src.¾ËÆÄºª;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
