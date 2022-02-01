@@ -35,8 +35,10 @@ class Paper{
 			temppage++;
 		}
 		
-		// 현재 페이지의 nav 페이지 한 nav당 페이지가 10이라면 1~10 인지 확인할수 있는 것
+		// 현재 페이지의 nav 페이지 한 nav당 페이지가 10이라면 1~10 인지
 		int tempnav = (temppage-1) / page_per_page ;
+		
+		
 		long start = tempnav*11+1;
 		System.out.println("<!DOCTYPE html");
 		System.out.println("<html lang=\"ko-kr\">");
