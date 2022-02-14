@@ -1,6 +1,7 @@
 package ³ì»ö¿ÊÁ©´Ù;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
@@ -24,36 +25,52 @@ public class Main {
 			
 			int result = BFS(array);
 			
+			System.out.println("Problem 1: "+result);
 		}
 		
-		
+		br.close();
 		
 	}
 	
 	private static int BFS(int[][] array) {
 		int min = Integer.MAX_VALUE;
-		boolean[][] visit = new boolean[array.length][array[0].length];
+		int[][] dp = new int[array.length][array[0].length];
 		Queue<dot> queue = new LinkedList<>();
-		
+		for(int i = 0 ; i< dp.length; i++) {
+			Arrays.fill(dp[i], Integer.MAX_VALUE);
+		}
 		queue.add(new dot(0, 0 , array[0][0]));
 		
 		while(!queue.isEmpty()) {
 			dot d = queue.poll();
-			
+			if(d.x == array.length-1 && d.y == array[0].length-1) min = Math.min(min, d.count);
 			for(int i = 0 ; i < 4; i++) {
-				int tempx = dir[i][0];
-				int tempy = dir[i][1];
+				int tempx = d.x + dir[i][0];
+				int tempy = d.y + dir[i][1];
+				
+				if(inbound(tempx,tempy,array) && d.count < dp[tempx][tempy]) {
+					queue.add(new dot(tempx,tempy,d.count+array[tempx][tempy]));
+					dp[tempx][tempy] = d.count + array[tempx][tempy];
+					
+				}
+				
+				
 			}
+			
+			
 		}
-		return 0;
+		return min;
 	}
 	
-	
+	private static boolean inbound(int tempx,int tempy, int[][] array) {
+		if(tempx >= 0 && tempx < array.length && tempy>= 0 && tempy < array[0].length) return true;
+		return false;
+	}
 }
-public class dot{
-	private int x;
-	private int y;
-	private int count;
+class dot{
+	public int x;
+	public int y;
+	public int count;
 	
 	public dot(int x, int y,int count) {
 		this.x=x;
