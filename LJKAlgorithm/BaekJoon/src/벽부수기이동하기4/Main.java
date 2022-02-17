@@ -1,9 +1,10 @@
 package 벽부수기이동하기4;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 import java.util.StringTokenizer;
 public class Main {
@@ -45,6 +46,7 @@ public class Main {
 		int[][] result = new int[map.length][map[0].length];
 		boolean[][] visit = new boolean[map.length][map[0].length];
 		Queue<Dot> queue = new LinkedList<>();
+		List<Integer> list = new ArrayList<>();
 		HashMap<Integer,Integer> hashMap = new HashMap<>();
 		int count = 2;
 		for(int i = 0; i< map.length; i++) {
