@@ -30,10 +30,10 @@ public class Main {
 		
 		ArrayList<Integer> list = new ArrayList<>();
 		
-		for(int i = 1 ; i < arrays.length; i++) {
+		for(int i = 1 ; i < arrays.length; i++) { //¿¬ÁÖ ÀÎµ¦½º
 			list.clear();
 			
-			for(int j = 0 ; j <= m; j++) {
+			for(int j = 0 ; j <= m; j++) { //º¼·ý
 				if(dp[j] == i-1) {
 					if(0 <= j - arrays[i] && j - arrays[i] <= m) {
 						list.add(j-arrays[i]);
@@ -46,7 +46,6 @@ public class Main {
 			
 			for(int num : list) {
 				dp[num] = i;
-			
 			}
 			
 			
