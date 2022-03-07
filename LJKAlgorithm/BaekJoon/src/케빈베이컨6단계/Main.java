@@ -12,7 +12,7 @@ public class Main {
 		
 		List<List<Integer>> lists = new ArrayList<>();
 		lists.add(new ArrayList<>());
-		for(int i = 0 ; i < n ; i ++) {
+		for(int i = 1 ; i <= n ; i ++) {
 			lists.add(new ArrayList<>());
 		}
 		for(int i = 0 ; i < m ; i ++) {
@@ -25,5 +25,7 @@ public class Main {
 			List<Integer> endList = lists.get(end);
 			startList.add(start);
 		}
+		
+		
 	}
 }
