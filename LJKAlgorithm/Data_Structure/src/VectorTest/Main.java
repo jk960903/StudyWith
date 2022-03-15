@@ -4,9 +4,10 @@ public class Main {
 	public static void main(String[] args) {
 		int n = 5;
 		boolean clockwise = true;
+		int[][] array = new int[32767][32767];
 		
-		Solution solution = new Solution();
-		int[][] result = solution.solution(n,clockwise);
+		//Solution solution = new Solution();
+		//int[][] result = solution.solution(n,clockwise);
 	}
 }
 
@@ -43,7 +44,10 @@ class Solution {
                 }else if(inbound(d.x+1,d.y,n)&&d.dir == 4 && answer[d.x+1][d.y] == 0){
                     queue.add(new Dot(d.x+1,d.y,3,d.num+1));
                 }
-                count++;
+                
+                HashMap<String,Integer> map = new HashMap<>();
+                HashSet<String> set = new HashSet<>();
+                Stack<Character> stack = new Stack();
                 
             }
         }else{
