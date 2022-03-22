@@ -38,42 +38,5 @@ class Solution{
 		}
 	}
 	
-	private int checkValue(int[] numbers, int[] list, int k) {
-		boolean check = true;
-		int count = Integer.MAX_VALUE;
-		for(int i = 1; i < list.length; i++) {
-			if(Math.abs(list[i] - list[i-1]) > k) {
-				check = false;
-				break;
-			}
-		}
-		if(check) {
-			count = 0 ; 
-			boolean[] array = new boolean[numbers.length];
-			int[] tempArray = new int[numbers.length];
-			for(int i = 0 ; i < list.length; i++) {
-				tempArray[i] = numbers[i];
-				if(list[i] == numbers[i]) {
-					array[i] = true;
-				}
-			}
-			for(int i = 0 ; i <numbers.length; i++) {
-				if(!array[i]) {
-					for(int j = 0 ; j < list.length; j++) {
-						if(tempArray[i] == list[j]) {
-							int temp = tempArray[i];
-							tempArray[i] = tempArray[j];
-							tempArray[j] = temp;
-							array[i] = true;
-							if(tempArray[j] == list[j]) {
-								array[j] = true;
-							}
-							count++;
-						}
-					}
-				}
-			}
-		}
-		return count;
-	}
+	
 }
